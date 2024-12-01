@@ -1,4 +1,4 @@
-name: Build and Package
+name: Build
 
 on:
   push:
@@ -10,11 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Set up environment
-        run: sudo apt-get update && sudo apt-get install -y zip
-
-      - name: Run build script
-        run: sh build.sh
+    - name: Run build script
+      run: ./build.sh
