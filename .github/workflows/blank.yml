@@ -13,6 +13,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Install dtc
+      run: sudo apt-get update && sudo apt-get install -y device-tree-compiler
+
     - name: Set VERSION
       run: |
         VERSION=$(head -n 4 module.prop | tail -n 1 | sed 's/.\{12\}//')
